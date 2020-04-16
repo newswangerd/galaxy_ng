@@ -1,5 +1,5 @@
 [tool.towncrier]
-package = "galaxy-ng"
+package = "ansible-galaxy-ng"
 filename = "CHANGES.rst"
 directory = "CHANGES/"
 title_format = "{version} ({project_date})"
@@ -21,4 +21,3 @@ exclude = '''
   | migrations
 )/
 '''
-

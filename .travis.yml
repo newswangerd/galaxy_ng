@@ -30,7 +30,7 @@ addons:
   postgresql: '9.6'
 jobs:
   include:
-  - stage: test
+  - stage: test and deploy
     before_install: .travis/before_install.sh
     install: .travis/install.sh
     before_script: .travis/before_script.sh
@@ -44,12 +44,9 @@ jobs:
       - sudo kubectl logs -l app=pulp-content --tail=10000
       - sudo kubectl logs -l app=pulp-resource-manager --tail=10000
       - sudo kubectl logs -l app=pulp-worker --tail=10000
-  - stage: Release to PyPI
-    if: tag IS NOT blank
-    before_install: .travis/before_install.sh
-    install: .travis/install.sh
     deploy:
       provider: pypi
+      distributions: "bdist_wheel"
       user: "__token__"
       server: https://test.pypi.org/legacy/
       skip_cleanup: true
@@ -57,4 +54,10 @@ jobs:
         secure: "EfqXyT1gM5l2umEmGpqbFpPyoVPUAGmlODG8ogttGWbEqeV82F5fdaSZMCrLuhlLLSvBY9Mltk8/zaO5hwnSenr2ribNghUql6AJXmxCQ2SM28HxJqsF/XIrE07DW8PbDYDZbPJ/hMWULzsHX8nTO5D/eqs4TdzjQVwbUCCp76LqchmKZn41IOmePrSAIcMSJxbMq0l+KCwQFRhbuS+YpDwuhygmw8fNvAElVy+6iBfBaMArxDQvS8CYWvtPhYgi8yKOc7uRA302Z9QXrt1PLI9D58F/KzRyUi0ExdIWnAJOoxtpVt7xZJt4CF6k/i5YEsQoUVofCMa1PKUxWeQC3CV2rmri91341foMOcXEivEMjxmPwYXMvmo3NyCqiOFYLbv4t/gvCfEZLPCOwpO+HXpE4srFnc/1gVQOMxIHJ/ClB25aOOBNeYUL86jPWShOz0yMUJs+1i6MggwNdSMJDj+oNhJW2HaKDVckWFE6yDURlszk9aO+dPA3Mk42/mEJMqkKVF1U8jBhKmrImCiHkomsWRLr98lSjSwFYlAvCKd4v8pfKVH1x1K4ptBCy2JRsZjQkCq1qw2sk2PnroELY5cc8UrPz5pe7xUjPSuWMmGOLW7fP/vmv0u4NMtNmLJa3yqduxPB4dJ4DLwfqjxdW4XnoGafUeCRcmowgBIoUDM="
       on:
         tags: true
+
+  # - stage: Release to PyPI
+  #   if: tag IS NOT blank
+  #   install:
+  #     - pip install .
+
 ...

@@ -45,9 +45,9 @@ jobs:
   #     - sudo kubectl logs -l app=pulp-resource-manager --tail=10000
   #     - sudo kubectl logs -l app=pulp-worker --tail=10000
   - stage: deploy to pypi
+    install:
+      - pip install --no-cache-dir --editable /app
     deploy:
-      install:
-        - pip install --no-cache-dir --editable /app
       provider: pypi
       distributions: "bdist_wheel"
       user: "__token__"

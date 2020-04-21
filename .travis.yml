@@ -31,7 +31,7 @@ addons:
 jobs:
   include:
   - stage: test and deploy
-    before_install: .travis/before_install.sh
+    before_install: exit 1
     install: .travis/install.sh
     before_script: .travis/before_script.sh
     script: .travis/script.sh

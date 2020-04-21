@@ -46,7 +46,6 @@ jobs:
   #     - sudo kubectl logs -l app=pulp-worker --tail=10000
   - stage: deploy to pypi
     install:
-      - pip install --no-cache-dir .
     deploy:
       provider: pypi
       distributions: "bdist_wheel"

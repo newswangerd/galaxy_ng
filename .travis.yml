@@ -47,6 +47,8 @@ jobs:
   - stage: deploy to pypi
     install:
       - echo 'install'
+    script:
+      - echo 'script'
     deploy:
       provider: pypi
       distributions: "bdist_wheel"

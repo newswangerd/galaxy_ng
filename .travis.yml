@@ -57,6 +57,6 @@ jobs:
       skip_cleanup: true
       password:
         secure: "EfqXyT1gM5l2umEmGpqbFpPyoVPUAGmlODG8ogttGWbEqeV82F5fdaSZMCrLuhlLLSvBY9Mltk8/zaO5hwnSenr2ribNghUql6AJXmxCQ2SM28HxJqsF/XIrE07DW8PbDYDZbPJ/hMWULzsHX8nTO5D/eqs4TdzjQVwbUCCp76LqchmKZn41IOmePrSAIcMSJxbMq0l+KCwQFRhbuS+YpDwuhygmw8fNvAElVy+6iBfBaMArxDQvS8CYWvtPhYgi8yKOc7uRA302Z9QXrt1PLI9D58F/KzRyUi0ExdIWnAJOoxtpVt7xZJt4CF6k/i5YEsQoUVofCMa1PKUxWeQC3CV2rmri91341foMOcXEivEMjxmPwYXMvmo3NyCqiOFYLbv4t/gvCfEZLPCOwpO+HXpE4srFnc/1gVQOMxIHJ/ClB25aOOBNeYUL86jPWShOz0yMUJs+1i6MggwNdSMJDj+oNhJW2HaKDVckWFE6yDURlszk9aO+dPA3Mk42/mEJMqkKVF1U8jBhKmrImCiHkomsWRLr98lSjSwFYlAvCKd4v8pfKVH1x1K4ptBCy2JRsZjQkCq1qw2sk2PnroELY5cc8UrPz5pe7xUjPSuWMmGOLW7fP/vmv0u4NMtNmLJa3yqduxPB4dJ4DLwfqjxdW4XnoGafUeCRcmowgBIoUDM="
-      # on:
-      #   tags: true
+      on:
+        tags: true
 ...
